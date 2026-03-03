@@ -1,11 +1,31 @@
 {
   "functions": {
     "api/flood.js": {
-      "maxDuration": 60
+      "maxDuration": 60,
+      "runtime": "nodejs18.x"
     }
   },
   "routes": [
-    { "src": "/api/flood", "dest": "/api/flood.js" },
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+    {
+      "src": "/api/flood",
+      "dest": "/api/flood.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "cleanUrls": true,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Powered-By",
+          "value": "SWILL-FLOOD/2016"
+        }
+      ]
+    }
+  ],
+  "outputDirectory": "public"
 }
