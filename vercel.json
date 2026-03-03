@@ -1,0 +1,11 @@
+{
+  "functions": {
+    "api/flood.js": {
+      "maxDuration": 60
+    }
+  },
+  "routes": [
+    { "src": "/api/flood", "dest": "/api/flood.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
